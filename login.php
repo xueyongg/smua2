@@ -7,7 +7,7 @@
 ?>
 <html>
 	<head>
-		<link rel = "stylesheet" type = "text/css" href = "Style.css">
+		<link rel = "stylesheet" type = "text/css" href = "/smua2/css/Style.css">
 		<title>
 			Log in
 		</title>
@@ -87,10 +87,10 @@
 				if($error){
 					mysqli_close($conn);
 					echo "redirecting...";
-					echo "<meta http-equiv='refresh' content='2;url=LogInPage.php'>";
+					echo "<meta http-equiv='refresh' content='2;url=login.php'>";
 				}else{
 					mysqli_close($conn);
-					echo "<meta http-equiv='refresh' content='1;url=MainPage.php'>";
+					echo "<meta http-equiv='refresh' content='1;url=/smua2/pages/MainPage.php'>";
 				}
 				
 				//will settle the form and the database insertion here!!

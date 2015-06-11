@@ -23,7 +23,7 @@
 </style>
 
 	<head>
-		<link link = "stylesheet" type = "text/css" href = "Style.css">
+		<link link = "stylesheet" type = "text/css" href = "/smua2/css/Style.css">
 		<title>
 			Registration page
 		</title>

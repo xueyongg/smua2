@@ -26,7 +26,7 @@
 		<title>
 			<?php echo strtoupper($_SESSION['lg']);?> page
 		</title>
-		<link rel = "stylesheet" type = "text/css" href="style.css">
+		<link rel = "stylesheet" type = "text/css" href="/smua2/css/style.css">
 		<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		
 		<script>
@@ -198,7 +198,7 @@
 			width:168px;
 			height:224px;
 			padding:10px;
-			background#eee;
+			background:#eee;
 			border-radius:20px;
 			-moz-border-radius:20px;
 			-webkit-border-radius:20px;

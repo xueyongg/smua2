@@ -1,4 +1,4 @@
-<?
+<?php
 	session_start();
 
 	$servername = "localhost";
@@ -40,7 +40,7 @@
 <html>
 	<head>
 		<title>Admin Page</title>
-		<link rel = "stylesheet" type = "text/css" href = "Style.css">
+		<link rel = "stylesheet" type = "text/css" href = "/smua2/css/Style.css">
 		<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
