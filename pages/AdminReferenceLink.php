@@ -88,11 +88,11 @@
 				});
 			})
 		</script>
-		<p class = "welcomemessage">Welecome, <?php echo $_SESSION['fullname']; ?>. This is the administrative page.<br></p>
+		<p class = "welcomemessage">Welcome, <?php echo $_SESSION['fullname']; ?>. This is the administrative page.<br></p>
 		<div class = "menu">
 			
 			<ul>
-				<li class = "blogname"><?php echo strtoupper($_SESSION['username']);?></li>
+                            <li class = "blogname"><a href=><?php echo strtoupper($_SESSION['username']);?></a></li>
 				<div class = "link">
 					<li class = "tab1"><A target = "_blank" href = <?php echo $_SESSION['blog']?>>Blog</A></t></li>
 					<li class = "tab2"><A target = "_blank" href = <?php echo $_SESSION['facebook']?>>Facebook</A></li>

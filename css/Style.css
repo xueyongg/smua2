@@ -130,6 +130,10 @@ li{
     position:relative;
     top:100px;
 }
+.nav nav-pills nav-stacked{
+   top:66px;
+   position:fixed;
+}
 
 p{
     color: #424242;

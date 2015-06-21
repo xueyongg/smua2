@@ -39,62 +39,12 @@ while (mysqli_stmt_fetch($stmt)) {
 ?>
 <html>
     <head>
-        <link rel = "stylesheet" text = "text/css" href = "/smua2/css/Style.css">
+        <link rel = "stylesheet" text = "text/css" href = "Style.css">
         <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <script>
-            $(document).ready(function () {
-                $(".mainbody").hide();
-                $(".menu").show();
-                $(".link").show();
 
-                $(".tab0").click(function () {
-                    $(".mainbody").hide();
-                    $(".menu").show();
-                    $(".link").show();
-                    $(".welcomemessage").fadeIn();
-                });
-
-                $(".tab4").click(function () {
-                    $(".mainbody").hide();
-                    $(".welcomemessage").hide();
-                    $(".menu").show();
-                    $(".link").show();
-
-                    $("#aboutme").fadeIn();
-                });
-                $(".tab6").click(function () {
-                    $(".mainbody").hide();
-                    $("p").hide();
-                    $(".menu").show();
-                    $(".link").show();
-                    $("#uploadfunction").fadeIn();
-                });
-                $(".tab7").click(function () {
-                    $(".mainbody").hide();
-                    $("p").hide();
-                    $(".menu").show();
-                    $(".link").show();
-                    $("#setting").fadeIn();
-                });
-                $("#settingsaved").click(function () {
-                    location.reload();
-                });
-                $(".changeinfobutton").click(function () {
-                    $(".mainbody").hide();
-                    $(".welcomemessage").hide();
-                    $(".menu").show();
-                    $(".link").show();
-                    $("#aboutme").show();
-                    $(".infoAboutMe").show();
-                    $("#changeInfo").show();
-                    $(".updateInfo").fadeIn();
-                });
-                $("#settingsaved").click(function () {
-                    location.reload();
-                });
-
-
-            })
         </script>
 
 
@@ -103,40 +53,70 @@ while (mysqli_stmt_fetch($stmt)) {
         if (strcmp($username, "Admin") == 0)
             echo "<meta http-equiv='refresh' content='0;url=AdminReferenceLink.php'>";
         ?>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><?php echo strtoupper($_SESSION['fullname']); ?></a>
+                </div>
 
-        <ul>
-            <li class = "blogname"><a href = ><?php echo strtoupper($_SESSION['fullname']); ?></a></li>
-            <div class = "link">
-                <li class = "tab0"><A href = >HOME</A></li>
-                <li class = "tab1"><A target = "_blank" href = <?php echo $_SESSION['blog'] ?>>BLOG</A></li>&nbsp 
-                <li class = "tab2"><A target = "_blank" href = <?php echo $_SESSION['facebook'] ?>>FB</A></li>&nbsp 
-                <li class = "tab3"><A target = "_blank" href = <?php if (isset($_SESSION['instagram'])) echo $_SESSION['instagram'];
-        else echo"" ?>>INSTAGRAM</A></li>&nbsp 
-                <li class = "tab4"><A href = "#aboutme">ABOUT</A></li>&nbsp 
-                <li class = "tab5"><A href = 'lg.php'><?php echo strtoupper($_SESSION['lg']); ?></A></li>&nbsp 
-                <li class = "tab6"><A href = "#uploadfunction">UPLOAD FILE</A></li>&nbsp 
-                <li class = "tab7"><A href = '#setting'>SETTING</A></li>&nbsp
-                <li class = "logout"><A href = "logout.php">LOGOUT</A></li><br>
-            </div>
-        </ul><br>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="lg.php"><?php echo strtoupper($_SESSION['lg']); ?></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Setting <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">setting</a></li>
+                                <li><a href="#">logout</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
     </div>
-
-    <ul>
-        <div class = "link">
-            <li class = "side1"><a href= "">hi</a></li><br>
-            <li class = "side2"><a href= "">1</a></li><br>
-            <li class = "side2"><a href= "">2</a></li><br>
-            <li class = "side2"><a href= "">3</a></li><br>
-            <li class = "side2"><a href= "">4</a></li><br>
-            <li class = "side2"><a href= "">5</a></li><br>
-        </div>
-    </ul>
-
-    <p class ="welcomemessage">Welcome, <?php echo $_SESSION['fullname']; ?><br></p>
-
 </head>
 <body>
     <div class ="mainbody">
+        <div class="jumbotron">
+            <h1>Hello, <?php echo $_SESSION['fullname']; ?>!</h1>
+            <p>#about me</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+
         <div id = "aboutme">
             <?php
             $stmt = $conn->prepare("select description from userdb where username = ?");
@@ -286,10 +266,18 @@ while (mysqli_stmt_fetch($stmt)) {
             ?>
 
             <form method ="post" Action = "<?php echo $_SERVER['PHP_SELF'] ?>">
-                    <!--Username: <input type = "text" name = "updatedUsername" value = <?php if (isset($_SESSION['username'])) echo $_SESSION['username'];
-            else echo "placeholder = 'Username'"; ?>><br>-->
-                Fullname: <input type = "text" name = "updatedFullname" value = <?php if (isset($_SESSION['fullname'])) echo $_SESSION['fullname'];
-            else echo "placeholder = 'Fullname'"; ?>><br>
+                    <!--Username: <input type = "text" name = "updatedUsername" value = <?php
+                if (isset($_SESSION['username']))
+                    echo $_SESSION['username'];
+                else
+                    echo "placeholder = 'Username'";
+                ?>><br>-->
+                Fullname: <input type = "text" name = "updatedFullname" value = <?php
+                if (isset($_SESSION['fullname']))
+                    echo $_SESSION['fullname'];
+                else
+                    echo "placeholder = 'Fullname'";
+                ?>><br>
                 Facebook: <input type = "text" name = "updatedFacebook" value = "<?php if (isset($_SESSION['facebook'])) echo $_SESSION['facebook']; ?>" placeholder = "Facebook link"><br>
                 Blog: <input type = "text" name = "updatedBlog" value = "<?php if (isset($_SESSION['blog'])) echo $_SESSION['blog']; ?>" placeholder = "Blog link"><br>
                 Instagram: <input type = "text" name = "updateInstagram" value = "<?php if (isset($_SESSION['instagram'])) echo $_SESSION['instagram']; ?>" placeholder = "Instagram link"><br>
@@ -367,6 +355,7 @@ while (mysqli_stmt_fetch($stmt)) {
         position:relative;
         top:250px;
     }
+    body { padding-top: 70px; }
 </style>
 
 <script src="/path/to/masonry.pkgd.min.js"></script>
